@@ -1,0 +1,16 @@
+{
+  "name": "smart-waste-backend",
+  "version": "1.0.0",
+  "description": "Backend for Smart Waste Management",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "mongodb-memory-server": "^11.0.1"
+  }
+}
