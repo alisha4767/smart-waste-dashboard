@@ -2,12 +2,14 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const BinsContext = createContext();
 
+const API_BASE = "https://smart-waste-dashboard-1-t2qb.onrender.com";
+
 export const BinsProvider = ({ children }) => {
   const [binsData, setBinsData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bins")
+    fetch(`${API_BASE}/bins`)
       .then(res => res.json())
       .then(data => {
         setBinsData(data);

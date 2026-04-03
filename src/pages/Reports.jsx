@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, CheckCircle2, CircleDashed, Image as ImageIcon, MessageSquare, Send } from 'lucide-react';
 
+const API_BASE = "https://smart-waste-dashboard-1-t2qb.onrender.com";
+
 const Reports = () => {
   const [reports, setReports] = useState([]);
   const [description, setDescription] = useState("");
@@ -9,7 +11,7 @@ const Reports = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchReports = () => {
-    fetch("http://localhost:5000/reports")
+    fetch(`${API_BASE}/reports`)
       .then(res => res.json())
       .then(data => {
         setReports(data);
@@ -31,7 +33,7 @@ const Reports = () => {
 
     const payload = { description, location };
 
-    fetch("http://localhost:5000/reports", {
+    fetch(`${API_BASE}/reports`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -47,7 +49,7 @@ const Reports = () => {
   };
 
   const markResolved = (id) => {
-    fetch(`http://localhost:5000/reports/${id}`, {
+    fetch(`${API_BASE}/reports/${id}`, {
       method: "PATCH",
     })
     .then(res => {
