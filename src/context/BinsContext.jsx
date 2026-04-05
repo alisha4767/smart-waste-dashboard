@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const BinsContext = createContext();
 
-const API_BASE = "https://smart-waste-dashboard-1-t2qb.onrender.com";
+const API_BASE = import.meta.env.VITE_API_URL || "https://smart-waste-dashboard-1-t2qb.onrender.com";
 
 export const BinsProvider = ({ children }) => {
   const [binsData, setBinsData] = useState([]);

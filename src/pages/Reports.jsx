@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, CheckCircle2, CircleDashed, Image as ImageIcon, MessageSquare, Send } from 'lucide-react';
 
-const API_BASE = "https://smart-waste-dashboard-1-t2qb.onrender.com";
+const API_BASE = import.meta.env.VITE_API_URL || "https://smart-waste-dashboard-1-t2qb.onrender.com";
 
 const Reports = () => {
   const [reports, setReports] = useState([]);
